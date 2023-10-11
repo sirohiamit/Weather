@@ -390,4 +390,13 @@
     .loader {
         right: 42%;
     }
+
+    .temperature > .temp {
+        font-size: 45px;
+    }
+
+    .upper-section-left > .time-with-date > .time {
+        font-size: 45px;
+    }
 } 
+
