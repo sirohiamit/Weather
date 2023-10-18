@@ -125,7 +125,7 @@ function renderWeatherInfo(data) {
     let mydate = desired_date.split(',');
     let only_date = mydate[0] + ',' + mydate[1];
     let only_time = mydate[2];
-    time.innerText = only_time == 'undefined' ? '' : only_time;
+    time.innerText = only_time == undefined ? '' : only_time;
     date.innerText = only_date;
     place.innerText = data?.location?.name;
     temparatue.innerText = data?.current?.temp_c + "℃";
