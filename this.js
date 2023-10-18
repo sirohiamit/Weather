@@ -111,7 +111,7 @@ function formatDateTime(timeStamp) {
 }
 
 function renderWeatherInfo(data) {
-    let desired_date = formatDateTime(data.current.last_updated);
+    let desired_date = formatDateTime(data?.current?.last_updated);
     let first_date = formatDateTime(data?.forecast?.forecastday[1]?.date).split(',');
     let second_date = formatDateTime(data?.forecast?.forecastday[2]?.date).split(',');
     let third_date = formatDateTime(data?.forecast?.forecastday[3]?.date).split(',');
@@ -125,7 +125,7 @@ function renderWeatherInfo(data) {
     let mydate = desired_date.split(',');
     let only_date = mydate[0] + ',' + mydate[1];
     let only_time = mydate[2];
-    time.innerText = only_time;
+    time.innerText = only_time == 'undefined' ? '' : only_time;
     date.innerText = only_date;
     place.innerText = data?.location?.name;
     temparatue.innerText = data?.current?.temp_c + "℃";
