@@ -48,7 +48,9 @@ async function showWeather() {
     try {
         const getCity = await getCurrentCity();
         let city = cityName ? cityName : getCity;
-        const response = await fetch('https://api.weatherapi.com/v1/forecast.json?key=' + `${API_KEY}` + '&q=' + `${city}` + '&days=6&aqi=no&alerts=yes');
+        const response = await fetch('https://api.weatherapi.com/v1/forecast.json?key=' + `${API_KEY}` + '&q=' + `${city}` + '&days=6&aqi=no&alerts=yes',{
+            referrerPolicy: "unsafe_url" 
+        });
         const data = await response.json();
         loaderContainer.classList.remove('active');
         if (data.error) {
