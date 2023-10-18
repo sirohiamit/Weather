@@ -111,7 +111,7 @@ function formatDateTime(timeStamp) {
 }
 
 function renderWeatherInfo(data) {
-    let desired_date = formatDateTime(data.current.last_updated);
+    let desired_date = formatDateTime(data?.current?.last_updated);
     let first_date = formatDateTime(data?.forecast?.forecastday[1]?.date).split(',');
     let second_date = formatDateTime(data?.forecast?.forecastday[2]?.date).split(',');
     let third_date = formatDateTime(data?.forecast?.forecastday[3]?.date).split(',');
