@@ -107,7 +107,7 @@ function formatDateTime(timeStamp) {
         month: 'short',
     };
 
-    return new Date(timeStamp).toLocaleDateString('en-US', options);
+    return new Date(timeStamp).toLocaleString('en-US', options);
 }
 
 function renderWeatherInfo(data) {
